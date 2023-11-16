@@ -33,7 +33,7 @@ class Solution
     //Function to reverse words in a given string.
     String reverseWords(String S)
     {
-        String[] words=S.split("\\.");
+        String[] words=S.split("\\.+");
         StringBuilder res=new StringBuilder();
         for(int i=words.length-1;i>=0;i--){
             res.append(words[i]);
@@ -42,7 +42,9 @@ class Solution
         }
         return res.toString();
     }
-    
+// "\s" is a regex class for any kind of whitespace (space, tab, newline, etc). 
+//     Since Java uses "\" as an escape character in strings (e.g. for newlines: "\n"), 
+//     we need to escape the escape character ;-) So it becomes "\\s". The "+" means one or more of them.    
     
     // Alternative Method
     //     int start=0;
